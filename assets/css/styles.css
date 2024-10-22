@@ -1,3 +1,9 @@
+:root {
+    --text-color: #edf2f4;
+    --header-color: #9b2226;
+
+}
+
 *,
 ::before,
 ::after {
@@ -6,6 +12,10 @@
     padding: 0;
 }
 
+/* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -13,10 +23,15 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
 }
 
 li {
     list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 .container {
@@ -26,9 +41,24 @@ li {
 #navbar {
     position: fixed;
     top: 0;
-    background-color: maroon;
+    /* min-height: 70px; */
+    background-color: var(--header-color);
     width: 100%;
-    min-height: 70px;
+
 }
 
-#navbar>#navbar-list {}
+#navbar>.navbar-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 2rem;
+
+}
+
+.navbar-list a {
+    display: block;
+    font-size: 2.2rem;
+    padding: 2.5rem;
+    color: var(--text-color);
+}
