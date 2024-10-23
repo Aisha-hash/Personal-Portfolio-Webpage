@@ -1,7 +1,8 @@
 :root {
-    --text-color: #edf2f4;
-    --header-color: #9b2226;
-
+    --text-white: #fffcf2;
+    --header-color: #eb5e28;
+    --main-blue: #45567d;
+    --main-green: #45a29e;
 }
 
 *,
@@ -23,7 +24,9 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--text-color);
+    color: var(--text-white);
+    font-size: 3rem;
+    line-height: 1.5;
 }
 
 li {
@@ -36,24 +39,21 @@ a {
 
 .container {
     width: 100%;
+    position: relative;
 }
 
 #navbar {
     position: fixed;
     top: 0;
-    /* min-height: 70px; */
     background-color: var(--header-color);
     width: 100%;
-
 }
 
 #navbar>.navbar-list {
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     margin-right: 2rem;
-
 }
 
 .navbar-list a {
@@ -61,4 +61,42 @@ a {
     font-size: 2.2rem;
     padding: 2.5rem;
     color: var(--text-color);
+}
+
+.navbar-list a:hover {
+    background: var(--main-blue);
+}
+
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(65deg, #3d405b 0, #252422 100%);
+    font-size: 3.5rem;
+}
+
+#welcome-section>p {
+    color: var(--header-color);
+    font-style: italic;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+#projects {
+    text-align: center;
+    padding: 2rem;
+    background: var(--main-green);
+}
+
+.projects-header {
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid var(--text-white);
+    font-size: 3.2rem;
 }
